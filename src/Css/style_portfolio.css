@@ -17,7 +17,7 @@ body.active-dark {
     --main-color: #fff;
     --accent-color: #fca311;
     --light-gray: #323946;
-    --card-bg: #2b323f; /* Màu nền card khi tối */
+    --card-bg: #2b323f;
     --shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 

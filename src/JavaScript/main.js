@@ -1,19 +1,15 @@
-/* ==================== 0. CẤU HÌNH EMAILJS ==================== */
-// BẠN PHẢI THAY THÔNG TIN CỦA BẠN VÀO 3 DÒNG DƯỚI ĐÂY
-const PUBLIC_KEY = "S_6owil9zwQsCCSpW";   // Ví dụ: "user_123abc"
-const SERVICE_ID = "service_4hapbne";   // Ví dụ: "service_gmail"
-const TEMPLATE_ID = "template_nug8o2e"; // Ví dụ: "template_contact"
-const MY_SECRET_CODE = "1234";          // Mật khẩu để gửi
+const PUBLIC_KEY = "S_6owil9zwQsCCSpW";   
+const SERVICE_ID = "service_4hapbne";  
+const TEMPLATE_ID = "template_nug8o2e"; 
+const MY_SECRET_CODE = "1234";          
 
-// Khởi tạo EmailJS
+
 (function(){
     emailjs.init(PUBLIC_KEY);
 })();
 
-/* ==================== 1. DARK MODE ==================== */
 let darkModeIcon = document.querySelector('#darkmode-icon');
 
-// Kiểm tra LocalStorage khi load trang
 if(localStorage.getItem('theme') === 'dark'){
     document.body.classList.add('active-dark');
     darkModeIcon.classList.remove('fa-moon');
@@ -25,7 +21,6 @@ darkModeIcon.onclick = () => {
     darkModeIcon.classList.toggle('fa-moon');
     document.body.classList.toggle('active-dark');
     
-    // Lưu trạng thái
     if(document.body.classList.contains('active-dark')){
         localStorage.setItem('theme', 'dark');
     } else {
@@ -33,7 +28,6 @@ darkModeIcon.onclick = () => {
     }
 };
 
-/* ==================== 2. MOBILE MENU ==================== */
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
