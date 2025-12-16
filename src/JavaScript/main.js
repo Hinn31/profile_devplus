@@ -126,7 +126,7 @@ if(applyForm) {
             }, (err) => {
                 btnApply.innerText = 'Lỗi!';
                 btnApply.style.background = '#e74c3c';
-                alert("Lỗi: " + JSON.stringify(err));
+                alert("Lỗi: " + JSON.stringify(err)); ///'
             });
     });
 }
