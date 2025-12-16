@@ -1,24 +1,138 @@
-import '../Css/style.css'
-import javascriptLogo from '../JavaScript/javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from '../JavaScript/counter.js'
+/* ==================== 0. CẤU HÌNH EMAILJS ==================== */
+// BẠN PHẢI THAY THÔNG TIN CỦA BẠN VÀO 3 DÒNG DƯỚI ĐÂY
+const PUBLIC_KEY = "S_6owil9zwQsCCSpW";   // Ví dụ: "user_123abc"
+const SERVICE_ID = "service_4hapbne";   // Ví dụ: "service_gmail"
+const TEMPLATE_ID = "template_nug8o2e"; // Ví dụ: "template_contact"
+const MY_SECRET_CODE = "1234";          // Mật khẩu để gửi
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+// Khởi tạo EmailJS
+(function(){
+    emailjs.init(PUBLIC_KEY);
+})();
 
-setupCounter(document.querySelector('#counter'))
+/* ==================== 1. DARK MODE ==================== */
+let darkModeIcon = document.querySelector('#darkmode-icon');
+
+// Kiểm tra LocalStorage khi load trang
+if(localStorage.getItem('theme') === 'dark'){
+    document.body.classList.add('active-dark');
+    darkModeIcon.classList.remove('fa-moon');
+    darkModeIcon.classList.add('fa-sun');
+}
+
+darkModeIcon.onclick = () => {
+    darkModeIcon.classList.toggle('fa-sun');
+    darkModeIcon.classList.toggle('fa-moon');
+    document.body.classList.toggle('active-dark');
+    
+    // Lưu trạng thái
+    if(document.body.classList.contains('active-dark')){
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
+    }
+};
+
+/* ==================== 2. MOBILE MENU ==================== */
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+};
+
+/* ==================== 3. TYPEWRITER EFFECT ==================== */
+const textElement = document.querySelector(".typing-text");
+const words = ["Front-End Developer", "UI/UX Designer", "Web Developer"];
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typeEffect = () => {
+    const currentWord = words[wordIndex];
+    textElement.textContent = currentWord.substring(0, charIndex);
+    
+    if (!isDeleting && charIndex < currentWord.length) {
+        charIndex++;
+        setTimeout(typeEffect, 100);
+    } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, 50);
+    } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
+        setTimeout(typeEffect, isDeleting ? 2000 : 500);
+    }
+}
+document.addEventListener("DOMContentLoaded", typeEffect);
+
+/* ==================== 4. PROJECT FILTER ==================== */
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        button.classList.add('active');
+
+        const filterValue = button.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+            if(filterValue === 'all' || card.getAttribute('data-item') === filterValue) {
+                card.classList.remove('hide');
+                card.classList.add('show');
+            } else {
+                card.classList.remove('show');
+                card.classList.add('hide');
+            }
+        });
+    });
+});
+
+/* ==================== 5. EMAILJS APPLY FORM ==================== */
+const applyForm = document.getElementById('apply-form');
+const btnApply = document.getElementById('btn-apply');
+
+if(applyForm) {
+    applyForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const secretInput = document.getElementById('secret-code').value;
+
+        // Check mật khẩu
+        if (secretInput !== MY_SECRET_CODE) {
+            alert("❌ Sai mã bảo mật! Vui lòng nhập đúng mã để gửi.");
+            return;
+        }
+
+        btnApply.innerText = 'Đang gửi...';
+        btnApply.style.opacity = '0.7';
+
+        // Lấy dữ liệu form
+        const templateParams = {
+            hr_email: this.hr_email.value,
+            subject: this.subject.value,
+            cv_link: this.cv_link.value,
+            message: this.message.value
+        };
+
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams)
+            .then(() => {
+                btnApply.innerText = 'Gửi thành công! ✅';
+                btnApply.style.background = '#2ecc71';
+                alert(`Đã gửi mail ứng tuyển đến: ${this.hr_email.value}`);
+                
+                setTimeout(() => {
+                    btnApply.innerText = 'Gửi CV Ngay';
+                    btnApply.style.background = 'var(--text-color)';
+                    btnApply.style.opacity = '1';
+                    applyForm.reset();
+                }, 3000);
+            }, (err) => {
+                btnApply.innerText = 'Lỗi!';
+                btnApply.style.background = '#e74c3c';
+                alert("Lỗi: " + JSON.stringify(err));
+            });
+    });
+}
