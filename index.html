@@ -1,289 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vo Thi Thu Hien | Portfolio</title>
-
-    <!-- Google Font -->
+    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/style_portfolio.css">
 
-    <!-- MAIN CSS (VERCEL SAFE) -->
-    <link rel="stylesheet" href="/src/css/style_portfolio.css">
-
-    <!-- EmailJS -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
-
 <body>
 
-<header>
-    <a href="#" class="logo">Hiền<span>Vo.</span></a>
-
-    <div class="header-right">
-        <i class="fas fa-moon" id="darkmode-icon"></i>
-        <i class="fas fa-bars" id="menu-icon"></i>
-    </div>
-
-    <nav class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section class="home" id="home">
-    <div class="home-content">
-        <h3>Hello, It's Me</h3>
-        <h1>Vo Thi Thu Hien</h1>
-        <p>I'm a <span class="typing-text"></span></p>
-
-        <p class="intro-text">
-            A passionate IT student at PNV, dedicated to building beautiful and user-friendly web interfaces.
-        </p>
-
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fas fa-envelope"></i></a>
+    <header>
+        <a href="#" class="logo">Hiền<span>Vo.</span></a>
+        
+        <div class="header-right" style="display: flex; align-items: center; gap: 20px;">
+            <i class="fas fa-moon" id="darkmode-icon"></i>
+            <i class="fas fa-bars" id="menu-icon"></i>
         </div>
 
-        <a href="#contact" class="btn">Download CV</a>
-    </div>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <div class="home-img">
-        <!-- IMAGE PATH FIXED (CASE-SENSITIVE) -->
-        <img src="/src/Image/Avatar/avarta1.jpg" alt="Avatar">
-    </div>
-</section>
-
-<section class="about" id="about">
-    <h2 class="heading">About <span>Me</span></h2>
-
-    <div class="about-container">
-        <div class="about-text">
-            <h3>Front-End Enthusiast</h3>
-            <p>
-                I am a third-year Information Technology student at
-                <strong>Passerelles Numériques Vietnam</strong>.
-                I enjoy building modern, responsive, and user-friendly web interfaces.
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, It's Me</h3>
+            <h1>Vo Thi Thu Hien</h1>
+            <p>I'm a <span class="typing-text"></span></p>
+            <p style="margin-top: 10px; max-width: 500px; opacity: 0.8;">
+                A passionate IT student at PNV, dedicated to building beautiful and user-friendly web interfaces.
             </p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+            <a href="#contact" class="btn">Download CV</a>
+        </div>
+        <div class="home-img">
+            <img src="./src/Image/Avatar/avarta1.jpg" alt="Avatar">
+        </div>
+    </section>
 
-            <div class="info-box">
-                <p><strong>Email:</strong> hien.vo26@student.passerellesnumeriques.org</p>
-                <p><strong>Phone:</strong> 0876 068 001</p>
-                <p><strong>Location:</strong> Da Nang, Vietnam</p>
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        
+        <div class="about-container">
+            <div class="about-text">
+                <h3>Front-End Enthusiast</h3>
+                <p>
+                    I am a third-year Information Technology student at <strong>Passerelles Numériques Vietnam</strong>. 
+                    I have experience designing and implementing user interfaces in group projects, collaborating with teammates, 
+                    and ensuring user-friendly experiences.
+                </p>
+                <div class="info-box">
+                    <p><strong>Email:</strong> hien.vo26@student.passerellesnumeriques.org</p>
+                    <p><strong>Phone:</strong> 0876 068 001</p>
+                    <p><strong>Location:</strong> Da Nang, Vietnam</p>
+                </div>
+            </div>
+
+            <div class="education-box">
+                <h3>Education Journey</h3>
+                <div class="education-item">
+                    <h4>Passerelles Numériques VietNam</h4>
+                    <span>Sep 2023 - Oct 2026</span>
+                    <p>Bachelor of Software Engineering. Da Nang Vocational College.</p>
+                </div>
+                <div class="education-item">
+                    <h4>Self-Taught Developer</h4>
+                    <span>2024 - Present</span>
+                    <p>Focusing on ReactJS, UI/UX Design (Figma) and Modern CSS.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="education-box">
-            <h3>Education Journey</h3>
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span></h2>
 
-            <div class="education-item">
-                <h4>Passerelles Numériques Vietnam</h4>
-                <span>Sep 2023 - Oct 2026</span>
-                <p>Bachelor of Software Engineering</p>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="card-icon"><i class="fas fa-code"></i></div>
+                <h3>Frontend Dev</h3>
+                <div class="skill-items">
+                    <div class="item" style="--color: #e34c26;"><i class="fab fa-html5"></i> <span>HTML5</span></div>
+                    <div class="item" style="--color: #264de4;"><i class="fab fa-css3-alt"></i> <span>CSS3</span></div>
+                    <div class="item" style="--color: #f7df1e;"><i class="fab fa-js"></i> <span>JavaScript</span></div>
+                    <div class="item" style="--color: #61dbfb;"><i class="fab fa-react"></i> <span>ReactJS</span></div>
+                    <div class="item" style="--color: #563d7c;"><i class="fab fa-bootstrap"></i> <span>Bootstrap</span></div>
+                </div>
             </div>
 
-            <div class="education-item">
-                <h4>Self-Taught Developer</h4>
-                <span>2024 - Present</span>
-                <p>ReactJS, UI/UX Design (Figma), Modern CSS</p>
+            <div class="skill-card">
+                <div class="card-icon"><i class="fas fa-server"></i></div>
+                <h3>Backend Dev</h3>
+                <div class="skill-items">
+                    <div class="item" style="--color: #8993be;"><i class="fab fa-php"></i> <span>PHP</span></div>
+                    <div class="item" style="--color: #ff2d20;"><i class="fab fa-laravel"></i> <span>Laravel</span></div>
+                    <div class="item" style="--color: #00758f;"><i class="fas fa-database"></i> <span>MySQL</span></div>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="card-icon"><i class="fas fa-tools"></i></div>
+                <h3>Tools & Soft Skills</h3>
+                <div class="skill-items">
+                    <div class="item" style="--color: #F24E1E;"><i class="fab fa-figma"></i> <span>Figma</span></div>
+                    <div class="item" style="--color: #333;"><i class="fab fa-github"></i> <span>GitHub</span></div>
+                    <div class="item" style="--color: #0052cc;"><i class="fab fa-jira"></i> <span>Jira</span></div>
+                    <div class="item" style="--color: #2ecc71;"><i class="fas fa-users"></i> <span>Teamwork</span></div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="skills" id="skills">
-    <h2 class="heading">My <span>Skills</span></h2>
+    <section class="projects" id="projects">
+        <h2 class="heading">Latest <span>Projects</span></h2>
 
-    <div class="skills-container">
-
-        <div class="skill-card">
-            <i class="fas fa-code"></i>
-            <h3>Frontend</h3>
-            <p>HTML, CSS, JavaScript, React, Bootstrap</p>
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web App</button>
+            <button class="filter-btn" data-filter="design">UI/UX Design</button>
         </div>
 
-        <div class="skill-card">
-            <i class="fas fa-server"></i>
-            <h3>Backend</h3>
-            <p>PHP, Laravel, MySQL</p>
+        <div class="projects-container">
+            <div class="project-card" data-item="web">
+                <div class="project-img"><img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?w=500" alt="Tracking"></div>
+                <div class="project-info">
+                    <h4>Student Tracking</h4>
+                    <p>Web app managing student progress using Laravel & ReactJS.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Laravel</span><span class="tech-badge">ReactJS</span>
+                    </div>
+                    <div class="project-links"><a href="#">Github <i class="fab fa-github"></i></a></div>
+                </div>
+            </div>
+
+            <div class="project-card" data-item="web">
+                <div class="project-img"><img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500" alt="Booking"></div>
+                <div class="project-info">
+                    <h4>Booking Tour</h4>
+                    <p>Travel booking platform with search & filter features.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">PHP</span><span class="tech-badge">MySQL</span>
+                    </div>
+                    <div class="project-links"><a href="#">Github <i class="fab fa-github"></i></a></div>
+                </div>
+            </div>
+
+            <div class="project-card" data-item="design">
+                <div class="project-img"><img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=500" alt="Furniture"></div>
+                <div class="project-info">
+                    <h4>Furniture Shop UI</h4>
+                    <p>Modern e-commerce UI designed with Figma.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Figma</span><span class="tech-badge">UI/UX</span>
+                    </div>
+                    <div class="project-links"><a href="#">Github <i class="fab fa-github"></i></a></div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="skill-card">
-            <i class="fas fa-tools"></i>
-            <h3>Tools</h3>
-            <p>GitHub, Figma, Jira, Teamwork</p>
+    <section class="contact" id="contact">
+        <h2 class="heading">Apply to <span>HR</span></h2>
+        
+        <div class="contact-container" style="max-width: 600px; margin: 0 auto; display: block;">
+            <form id="apply-form" class="contact-form">
+                <h3 style="text-align: center; margin-bottom: 20px;">Tool Rải CV (EmailJS)</h3>
+
+                <label>Email HR:</label>
+                <input type="email" name="hr_email" placeholder="hr@company.com" required>
+
+                <label>Tiêu đề:</label>
+                <input type="text" name="subject" value="Application for Front-End Developer - Vo Thi Thu Hien" required>
+
+                <label>Link CV:</label>
+                <input type="url" name="cv_link" placeholder="Link Google Drive/PDF..." required>
+
+                <label>Lời nhắn (Cover Letter):</label>
+                <textarea name="message" rows="5" required>Dear Hiring Manager, I am writing to apply for...</textarea>
+
+                <input type="password" id="secret-code" placeholder="Nhập mã bảo mật (Code: 1234)" style="border-color: var(--accent-color);">
+
+                <button type="submit" class="btn" id="btn-apply" style="width: 100%;">Gửi CV Ngay <i class="fas fa-paper-plane"></i></button>
+            </form>
         </div>
+    </section>
 
-    </div>
-</section>
+    <footer>
+        <p>Copyright &copy; 2025 by Vo Thi Thu Hien.</p>
+    </footer>
 
-<section class="projects" id="projects">
-    <h2 class="heading">Latest <span>Projects</span></h2>
-
-    <div class="projects-container">
-
-        <div class="project-card">
-            <h4>Student Tracking</h4>
-            <p>Laravel & ReactJS</p>
-        </div>
-
-        <div class="project-card">
-            <h4>Booking Tour</h4>
-            <p>PHP & MySQL</p>
-        </div>
-
-        <div class="project-card">
-            <h4>Furniture UI</h4>
-            <p>Figma Design</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="contact" id="contact">
-    <h2 class="heading">Apply to <span>HR</span></h2>
-
-    <form id="apply-form" class="contact-form">
-        <input type="email" placeholder="HR Email" required>
-        <input type="text" placeholder="Subject" required>
-        <input type="url" placeholder="CV Link" required>
-        <textarea rows="5" placeholder="Cover Letter"></textarea>
-        <button class="btn">Send CV</button>
-    </form>
-</section>
-
-<footer>
-    <p>© 2025 Vo Thi Thu Hien</p>
-</footer>
-
-<!-- MAIN JS (VERCEL SAFE) -->
-<script src="/src/js/main.js" type="module"></script>
-<style>
-    /* --- 1. VARIABLES & RESET --- */
-:root {
-    --bg-color: #fdfdfd;
-    --text-color: #333;
-    --main-color: #2b2d42;
-    --accent-color: #fca311;
-    --light-gray: #f0f2f5;
-    --card-bg: #fff;
-    --shadow: 0 4px 20px rgba(0,0,0,0.08);
-    --transition: all 0.3s ease;
-}
-
-/* DARK MODE VARIABLES */
-body.active-dark {
-    --bg-color: #1f242d;
-    --text-color: #fff;
-    --main-color: #fff;
-    --accent-color: #fca311;
-    --light-gray: #323946;
-    --card-bg: #2b323f;
-    --shadow: 0 4px 15px rgba(0,0,0,0.4);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; border: none; outline: none; scroll-behavior: smooth; font-family: 'Poppins', sans-serif; }
-body { background: var(--bg-color); color: var(--text-color); transition: var(--transition); }
-
-/* --- 2. HEADER --- */
-header {
-    position: fixed; top: 0; left: 0; width: 100%; padding: 1.2rem 8%;
-    background: var(--bg-color); display: flex; justify-content: space-between;
-    align-items: center; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo { font-size: 1.8rem; color: var(--text-color); font-weight: 800; }
-.logo span { color: var(--accent-color); }
-
-/* Dark Mode Icon */
-#darkmode-icon { font-size: 1.5rem; color: var(--text-color); cursor: pointer; transition: .3s; }
-#darkmode-icon:hover { color: var(--accent-color); }
-
-.navbar a { font-size: 1.1rem; color: var(--text-color); margin-left: 2rem; font-weight: 500; transition: .3s; }
-.navbar a:hover, .navbar a.active { color: var(--accent-color); }
-#menu-icon { font-size: 2rem; color: var(--text-color); display: none; cursor: pointer; }
-
-/* --- 3. SECTIONS --- */
-section { min-height: 100vh; padding: 6rem 8% 2rem; }
-.heading { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--text-color); }
-.heading span { color: var(--accent-color); }
-
-/* --- HOME --- */
-.home { display: flex; align-items: center; justify-content: center; gap: 4rem; }
-.home-content h3 { font-size: 1.8rem; font-weight: 700; }
-.home-content h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.2; margin: 0.5rem 0; }
-.home-content p span.typing-text { color: var(--accent-color); font-weight: 700; }
-.social-icons a {
-    display: inline-flex; justify-content: center; align-items: center; width: 45px; height: 45px;
-    background: transparent; border: 2px solid var(--text-color); border-radius: 50%;
-    color: var(--text-color); margin: 2rem 1rem 2rem 0; transition: .3s;
-}
-.social-icons a:hover { background: var(--text-color); color: var(--bg-color); transform: translateY(-5px); }
-.btn { display: inline-block; padding: 10px 28px; background: var(--text-color); border-radius: 4rem; color: var(--bg-color); font-weight: 600; box-shadow: var(--shadow); transition: .3s; }
-.btn:hover { background: var(--accent-color); color: #fff; transform: scale(1.05); }
-.home-img img { width: 350px; height: 350px; object-fit: cover; border-radius: 50%; border: 5px solid var(--card-bg); box-shadow: var(--shadow); animation: float 4s ease-in-out infinite; }
-
-/* --- ABOUT --- */
-.about { background: var(--light-gray); }
-.about-container { display: flex; gap: 4rem; flex-wrap: wrap; justify-content: center; }
-.about-text, .education-box { flex: 1; min-width: 300px; }
-.education-item { border-left: 3px solid var(--accent-color); padding-left: 1.5rem; margin-bottom: 2rem; position: relative; }
-.education-item::before { content: ''; position: absolute; left: -10px; top: 0; width: 17px; height: 17px; background: var(--accent-color); border-radius: 50%; }
-
-/* --- SKILLS (CARDS) --- */
-.skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.skill-card { background: var(--card-bg); padding: 2rem; border-radius: 20px; box-shadow: var(--shadow); text-align: center; transition: .3s; border-bottom: 4px solid transparent; }
-.skill-card:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent-color); }
-.card-icon { font-size: 3rem; color: var(--accent-color); margin-bottom: 1rem; }
-.skill-card h3 { margin-bottom: 1.5rem; color: var(--text-color); }
-.skill-items { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.item { display: flex; flex-direction: column; align-items: center; background: var(--bg-color); padding: 10px; width: 70px; border-radius: 10px; transition: .3s; cursor: pointer; }
-.item i { font-size: 1.5rem; color: #777; margin-bottom: 5px; }
-.item:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-.item:hover i, .item:hover span { color: var(--color); }
-
-/* --- PROJECTS (FILTER) --- */
-.projects { background: var(--light-gray); }
-.portfolio-filter { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
-.filter-btn { padding: 8px 20px; border-radius: 5px; border: 2px solid var(--text-color); background: transparent; color: var(--text-color); font-weight: 600; cursor: pointer; transition: .3s; }
-.filter-btn:hover, .filter-btn.active { background: var(--text-color); color: var(--bg-color); }
-
-.projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-.project-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: .3s; display: block; }
-.project-card.hide { display: none; }
-.project-card.show { animation: fadeIn 0.5s ease; }
-.project-card:hover { transform: translateY(-10px); }
-.project-img img { width: 100%; height: 200px; object-fit: cover; }
-.project-info { padding: 1.5rem; }
-.project-info h4 { font-size: 1.4rem; margin-bottom: 0.5rem; }
-.tech-stack { margin-bottom: 1rem; }
-.tech-badge { font-size: 0.75rem; background: var(--text-color); color: var(--bg-color); padding: 4px 10px; border-radius: 20px; margin-right: 5px; }
-.project-links a { color: var(--accent-color); font-weight: 600; }
-
-/* --- FORM --- */
-.contact-form { background: var(--card-bg); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow); }
-.contact-form input, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 0.5rem; border: 1px solid #ccc; background: var(--bg-color); color: var(--text-color); }
-
-/* --- FOOTER & ANIMATION --- */
-footer { background: var(--text-color); padding: 1.5rem; text-align: center; color: var(--bg-color); }
-@keyframes float { 0% { transform: translateY(0); } 50% { transform: translateY(-20px); } 100% { transform: translateY(0); } }
-@keyframes fadeIn { 0% { opacity: 0; transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
-
-/* --- RESPONSIVE --- */
-@media (max-width: 991px) { header { padding: 1.5rem 4%; } section { padding: 5rem 4% 2rem; } .home { flex-direction: column-reverse; } }
-@media (max-width: 768px) {
-    #menu-icon { display: block; }
-    .navbar { position: absolute; top: 100%; left: 0; width: 100%; padding: 1rem; background: var(--bg-color); border-top: 1px solid rgba(0,0,0,0.1); display: none; }
-    .navbar.active { display: block; } .navbar a { display: block; margin: 1.5rem 0; font-size: 1.2rem; }
-}
-</style>
+    <script src="./src/js/main.js" type="module"></script>
 </body>
 </html>
