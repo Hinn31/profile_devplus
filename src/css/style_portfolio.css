@@ -102,6 +102,12 @@ section { min-height: 100vh; padding: 6rem 8% 2rem; }
 /* --- FORM --- */
 .contact-form { background: var(--card-bg); padding: 2rem; border-radius: 15px; box-shadow: var(--shadow); }
 .contact-form input, .contact-form textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; border-radius: 0.5rem; border: 1px solid #ccc; background: var(--bg-color); color: var(--text-color); }
+.contact-form label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
+.contact-form button:disabled { cursor: not-allowed; transform: none; }
+.form-status { min-height: 1.5rem; margin-top: 1rem; font-size: 0.95rem; font-weight: 500; }
+.form-status.pending { color: #d68910; }
+.form-status.success { color: #27ae60; }
+.form-status.error { color: #e74c3c; }
 
 /* --- FOOTER & ANIMATION --- */
 footer { background: var(--text-color); padding: 1.5rem; text-align: center; color: var(--bg-color); }
